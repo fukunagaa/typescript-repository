@@ -1,3 +1,5 @@
+import { sample1 } from "./sample";
+
 // String
 const Hello = (name: string): string => {
   return "Hello " + name;
@@ -16,3 +18,5 @@ const Self = (lan: string): void => {
 console.log(Hello("man!"));
 console.log(Add(3, 5));
 Self("woman");
+
+sample1();

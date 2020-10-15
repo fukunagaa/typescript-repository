@@ -16,7 +16,9 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: "ts-loader",
+        use: "babel-loader",
+        // ローダーの処理対象から外すディレクトリ
+        exclude: /node_modules/,
       },
     ],
   },

@@ -16,7 +16,15 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: "babel-loader",
+        use: {
+          loader: "babel-loader",
+          options: {
+            // 配列の後ろから順に適用
+            // preset-env はデフォルト es5 で出力する
+            presets: ["@babel/preset-env", "@babel/typescript"],
+          },
+        },
+
         // ローダーの処理対象から外すディレクトリ
         exclude: /node_modules/,
       },

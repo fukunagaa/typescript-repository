@@ -9,10 +9,13 @@
         {{ todo.text }}
       </li>
     </ul>
+    <TodoItem></TodoItem>
   </div>
 </template>
 
 <script>
+import TodoItem from "./TodoItem";
+
 export default {
   data: function() {
     return { 
@@ -24,6 +27,9 @@ export default {
         {text: "食事"}
       ]
     };
+  },
+  components: {
+    TodoItem
   },
   methods: {
     reverseMessage: function() {

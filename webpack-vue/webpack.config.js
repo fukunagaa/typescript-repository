@@ -16,7 +16,7 @@ module.exports = {
   // import 文で .ts ファイルを解決するため
   // これを定義しないと import 文で拡張子を書く必要が生まれる。
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: [".ts", ".js", ".vue"],
   },
   devServer: {
     contentBase: path.join(__dirname, "public"),

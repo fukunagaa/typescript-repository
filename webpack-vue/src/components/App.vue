@@ -1,6 +1,7 @@
 <template>
   <div>
     <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">Button</button>
     <span v-if="seen">Now you see me</span>
     <ul>
       <li v-for="(todo, key) in todos" :key="key">
@@ -15,7 +16,7 @@ export default {
   data: function() {
     return { 
       message: "success",
-      seen: true,
+      seen: false,
       todos: [
         {text: "掃除"},
         {text: "洗濯"},
@@ -23,5 +24,10 @@ export default {
       ]
     };
   },
+  methods: {
+    reverseMessage: function() {
+      this.message = this.message.split("").reverse().join("");
+    }
+  }
 };
 </script>

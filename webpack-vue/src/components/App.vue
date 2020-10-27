@@ -1,7 +1,8 @@
 <template>
   <div>
     <p>{{ message }}</p>
-    <button v-on:click="reverseMessage">Button</button>
+    <input v-model="message">
+    <button v-on:click="reverseMessage">reverse</button>
     <span v-if="seen">Now you see me</span>
     <ul>
       <li v-for="(todo, key) in todos" :key="key">

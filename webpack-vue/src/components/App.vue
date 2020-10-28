@@ -2,6 +2,7 @@
   <div>
     <div>
       <p>{{ message }}</p>
+      <p>{{ reversedMessage }}</p>
       <input v-model="message">
       <button @click="reverseMessage">reverse</button>
     </div>
@@ -30,6 +31,11 @@ export default {
         {id:3, text: "食事"}
       ]
     };
+  },
+  computed: {
+    reversedMessage: function() {
+      return this.message.split("").reverse().join("");
+    }
   },
   components: {
     TodoItem

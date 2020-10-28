@@ -3,7 +3,7 @@
     <div>
       <p>{{ message }}</p>
       <input v-model="message">
-      <button v-on:click="reverseMessage">reverse</button>
+      <button @click="reverseMessage">reverse</button>
     </div>
     <div>
       <span v-if="seen">Now you see me</span>

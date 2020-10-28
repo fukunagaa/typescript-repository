@@ -7,7 +7,7 @@
     </div>
     <div>
       <span v-if="seen">Now you see me</span>
-      <button v-on:click="isSeen">is seen</button>
+      <button v-on:click="isSeen" v-bind:disabled="isButtonDisable">is seen</button>
     </div>
     <ul>
       <TodoItem v-for="todo in todos" v-bind:todo="todo" v-bind:key="todo.id"></TodoItem>
@@ -23,6 +23,7 @@ export default {
     return { 
       message: "success",
       seen: false,
+      isButtonDisable: true,
       todos: [
         {id:1, text: "掃除"},
         {id:2, text: "洗濯"},

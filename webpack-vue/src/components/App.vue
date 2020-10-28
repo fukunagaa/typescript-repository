@@ -1,15 +1,17 @@
 <template>
   <div>
-    <p>{{ message }}</p>
-    <input v-model="message">
-    <button v-on:click="reverseMessage">reverse</button>
-    <span v-if="seen">Now you see me</span>
+    <div>
+      <p>{{ message }}</p>
+      <input v-model="message">
+      <button v-on:click="reverseMessage">reverse</button>
+    </div>
+    <div>
+      <span v-if="seen">Now you see me</span>
+      <button v-on:click="isSeen">is seen</button>
+    </div>
     <ul>
-      <li v-for="(todo, key) in todos" :key="key">
-        {{ todo.text }}
-      </li>
+      <TodoItem v-for="todo in todos" v-bind:todo="todo" v-bind:key="todo.id"></TodoItem>
     </ul>
-    <TodoItem></TodoItem>
   </div>
 </template>
 
@@ -22,9 +24,9 @@ export default {
       message: "success",
       seen: false,
       todos: [
-        {text: "掃除"},
-        {text: "洗濯"},
-        {text: "食事"}
+        {id:1, text: "掃除"},
+        {id:2, text: "洗濯"},
+        {id:3, text: "食事"}
       ]
     };
   },
@@ -34,6 +36,9 @@ export default {
   methods: {
     reverseMessage: function() {
       this.message = this.message.split("").reverse().join("");
+    },
+    isSeen: function() {
+      this.seen = !this.seen;
     }
   }
 };

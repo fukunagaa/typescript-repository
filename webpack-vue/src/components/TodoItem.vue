@@ -1,6 +1,8 @@
 <template>
   <div>
-    todo list
+    <li>
+      {{ todo.id + ": " + todo.text }}
+    </li>
   </div>
 </template>
 
@@ -8,8 +10,8 @@
 export default {
   data: function() {
     return { 
-      sub: "success",
     };
   },
+  props: ["todo"]
 };
 </script>

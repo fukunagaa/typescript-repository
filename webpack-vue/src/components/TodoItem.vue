@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- propsされた値を表示 -->
     <li>
       {{ todo.id + ": " + todo.text }}
     </li>
@@ -8,10 +9,6 @@
 
 <script>
 export default {
-  data: function() {
-    return { 
-    };
-  },
   props: ["todo"]
 };
 </script>

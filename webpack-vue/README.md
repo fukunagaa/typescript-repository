@@ -20,3 +20,9 @@ $ npm install --save-dev vue-loader vue-template-compiler
 ```
 $ npm install --save-dev @types/webpack @types/webpack-dev-server webpack-dev-server
 ```
+
+- less(css)関連のパッケージインストール
+
+```
+$ npm install --save-dev vue-style-loader style-loader css-loader less-loader less
+```

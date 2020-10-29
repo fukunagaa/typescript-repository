@@ -1,19 +1,24 @@
 <template>
   <div>
+    <!-- クリックイベント -->
     <div>
       <p>{{ message }}</p>
+      <!-- 算出プロパティ -->
       <p>{{ reversedMessage }}</p>
       <input v-model="message">
       <button @click="reverseMessage">reverse</button>
     </div>
+    <!-- 表示・非表示　活性非活性 -->
     <div>
       <span v-if="seen">Now you see me</span>
       <button v-on:click="isSeen" v-bind:disabled="isButtonDisable">is seen</button>
     </div>
+    <!-- componentsのループ処理 -->
     <ul>
       <TodoItem v-for="todo in todos" v-bind:todo="todo" v-bind:key="todo.id"></TodoItem>
     </ul>
     <div>
+      <!-- getter,setter -->
       <input v-model="fullName">
       {{ fullName }}
     </div>

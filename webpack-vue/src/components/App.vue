@@ -22,6 +22,12 @@
       <input v-model="fullName">
       {{ fullName }}
     </div>
+    <div>
+      <!-- class関連 -->
+      <div class="info">info color</div>
+      <div v-bind:class="{ error: isError }">error color</div>
+      <div v-bind:class="classObject">warn color</div>
+    </div>
   </div>
 </template>
 
@@ -40,7 +46,12 @@ export default {
         {id:3, text: "食事"}
       ],
       firstName: "aa",
-      lastName: "bb"
+      lastName: "bb",
+      isError: true,
+      classObject: {
+        warn: true,
+        solid: false
+      }
     };
   },
   // 算出プロパティはリアクティブな依存関係にもとづきキャッシュされる

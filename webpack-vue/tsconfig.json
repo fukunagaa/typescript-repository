@@ -18,6 +18,15 @@
        strictPropertyInitialization）を有効化する */
     "strict": true,
 
+    // import Vue from 'vue' の書き方を許容する
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "dom",
+      "es2020"
+    ],
+    // デコレーターを有効に設定
+    "experimentalDecorators": true,
+    
     /* 各ファイルを個々のモジュールとしてトランスパイルする。
        Babel では技術的制約で、ネームスペースなどのファイルを跨いだ構文を解釈してトランスパイルできない。
        このオプションを有効にすれば、Babel でトランスパイルできない TypeScriptの構文を検出して警告を出す */
